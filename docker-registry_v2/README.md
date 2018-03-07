@@ -204,6 +204,7 @@ REPOSITORY           TAG                 IMAGE ID            CREATED            
 docker.io/nginx      latest              e548f1a579cf        2 weeks ago         108.6 MB
 
 重新打个标签
+
 [root@localhost ~]# docker tag e548f1a579cf 192.168.1.204:5000/nginx:latest
 
 [root@localhost ~]# docker images
