@@ -149,6 +149,7 @@ docker-compose.yml  htpasswd  openssl.cnf  registry-config.yml  server.cert  ser
 ### 启动仓库
 
 [root@docker-registry docker-registry]# docker-compose up
+
 Creating dockerregistry_registry_1 ... done
 Attaching to dockerregistry_registry_1
 registry_1  | time="2018-03-07T03:14:17Z" level=warning msg="No HTTP secret provided - generated random secret. This may cause problems with uploads if multiple registries are behind a load-balancer. To provide a shared secret, fill in http.secret in the configuration file or set the REGISTRY_HTTP_SECRET environment variable." go.version=go1.7.6 instance.id=b3b26165-a909-4c6c-b04a-9446135ceaa0 version=v2.6.2 
