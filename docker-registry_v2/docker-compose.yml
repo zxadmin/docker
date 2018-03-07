@@ -1,0 +1,21 @@
+registry:
+  environment:
+    - REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY=/var/lib/registry
+    - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/server.cert
+    - REGISTRY_HTTP_TLS_KEY=/certs/server.key
+    - REGISTRY_AUTH_HTPASSWD_REALM=basic-realm
+    - REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd
+    # - REGISTRY_AUTH_TOKEN_REALM=https://192.168.1.209:5001/auth
+    # - REGISTRY_AUTH_TOKEN_SERVICE="Docker registry"
+    # - REGISTRY_AUTH_TOKEN_ISSUER="Auth Service"
+    # - REGISTRY_AUTH_TOKEN_ROOTCERTBUNDLE=/certs/server.cert
+  image: registry:2
+  ports:
+    - "5000:5000"
+  restart: always
+  volumes:
+    - /srv/docker/registry:/var/lib/registry
+    - /srv/docker/certs:/certs:ro
+    - /srv/docker/auth:/auth:ro
+    # - /srv/docker/registry_config.yml:/var/lib/registry/config.yml:ro
+
