@@ -13,7 +13,7 @@ en_US.UTF-8、zh_CN.GBK、zh_CN.UTF-8
 
 table 键选择ok然后选择zh_CN.UTF-8
 
-![UTF-8](/png/UTF-8.png)
+![UTF-8](./png/UTF-8.png)
 
 
 # 默认安装wireshark软件可能会有问题
@@ -28,7 +28,7 @@ root@d9cad124bc0d:/# sudo dpkg-reconfigure wireshark-common
 
 选择“是”
 
-![wireshark](/png/wireshark.png)
+![wireshark](./png/wireshark.png)
 
 root@d9cad124bc0d:/# sudo gpasswd -a $USER wireshark
 
