@@ -1,0 +1,31 @@
+version: "2"
+
+services:
+  web:
+    image: centos7_nginx_php7:0.1
+    restart: always
+    ports:
+        - 443:443
+        - 80:80
+    volumes:
+        - ./build/default.conf:/etc/nginx/conf.d/default.conf:ro
+        - ./build/nginx.conf:/etc/nginx/nginx.conf:ro
+        - ./web:/var/www/html
+        - ./web/logs:/var/log/nginx
+    links:
+        - mysql
+        - guac
+
+
+  mysql:
+    image: docker.io/mysql:5.6
+    ports:
+        - 3306:3306
+    restart: always
+    volumes:
+      - ./mysql/:/var/lib/mysql/
+    environment:  
+      MYSQL_ROOT_PASSWORD: 7uj8ik 
+
+
+
