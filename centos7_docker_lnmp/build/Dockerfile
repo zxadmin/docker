@@ -15,8 +15,8 @@ RUN yum -y install --skip-broken php72w*
 
 
 #安装crond
-RUN yum -y install crontabs
-RUN echo "*/1 * * * * php /var/www/html/Src_XuanNiaoCollege/app/console util:xapi:run CheckPodStatementJob" > /var/spool/cron/root
+#RUN yum -y install crontabs
+#RUN echo "*/1 * * * * php /var/www/html/Src_XuanNiaoCollege/app/console util:xapi:run CheckPodStatementJob" > /var/spool/cron/root
 
 #安装supervisor
 RUN yum install -y python-setuptools
