@@ -14,7 +14,7 @@ services:
         - ./web/logs:/var/log/nginx
     links:
         - mysql
-        - guac
+    
 
 
   mysql:
