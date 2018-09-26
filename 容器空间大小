@@ -1,0 +1,10 @@
+修改容器空间大小
+
+vim /etc/sysconfig/docker
+
+OPTIONS='--selinux-enabled --log-driver=journald --signature-verification=false --storage-opt dm.basesize=50G'
+
+
+systemctl daemon-reload
+
+systemctl restart docker
