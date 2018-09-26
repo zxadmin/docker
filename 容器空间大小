@@ -1,5 +1,5 @@
 
-docker镜像默认最大10GB，修改容器空间大小
+docker镜像默认最大10GB，修改容器空间大小，注意磁盘要是EXT4格式。
 
 vim /etc/sysconfig/docker
 
