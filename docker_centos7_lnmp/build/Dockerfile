@@ -8,7 +8,7 @@ COPY nginx.repo /etc/yum.repos.d/ && yum -y install nginx
 
 #安装php
 
-RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm &&yum -y install --skip-broken php72w*
+RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm && yum -y install --skip-broken php72w*
 
 
 #安装crond
@@ -16,8 +16,7 @@ RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
 #RUN echo "*/1 * * * * php /var/www/html/Src_XuanNiaoCollege/app/console util:xapi:run CheckPodStatementJob" > /var/spool/cron/root
 
 #安装supervisor
-RUN yum install -y python-setuptools
-RUN easy_install supervisor
+RUN yum install -y python-setuptools && easy_install supervisor
 
 
 EXPOSE 80 443
