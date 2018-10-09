@@ -1,0 +1,7 @@
+将所有docker镜像打包
+
+docker save $(docker images | grep -v REPOSITORY | awk 'BEGIN{OFS=":";ORS=" "}{print $1,$2}') -o haha.tar
+
+导入：docker load -i haha.tar
+
+名称可自定义
