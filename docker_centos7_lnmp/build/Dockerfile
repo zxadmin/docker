@@ -4,14 +4,11 @@ MAINTAINER zhangxin <zhangxin@powerun.org.cn>
 
 #安装nginx
 
-COPY nginx.repo /etc/yum.repos.d/
-RUN yum -y install nginx
+COPY nginx.repo /etc/yum.repos.d/ && yum -y install nginx
 
 #安装php
 
-RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
-RUN yum -y install --skip-broken php72w*
+RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm &&yum -y install --skip-broken php72w*
 
 
 #安装crond
